@@ -83,31 +83,6 @@
 
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
-            <div class="header-mobile__bar">
-                <div class="container-fluid">
-                    <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
-                        </a>
-                        <button class="hamburger hamburger--slider" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <nav class="navbar-mobile">
-                <div class="container-fluid">
-                    <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Profile</a>
-                    </ul>
-                </div>
-            </nav>
-        </header>
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
@@ -220,52 +195,7 @@
             <header class="header-desktop" style="padding-bottom:2px;">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for Universities..." />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                            <div class="header-button">
 
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                                        </div>
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#">Ankit Choudhary</a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="User" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#">Ankit Choudhary</a>
-                                                    </h5>
-                                                    <span class="email">c.ankit1997@gmail.com</span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </header>
@@ -955,44 +885,19 @@
               </div>
               <div id='count' style="padding-bottom:4%;">
                 <div ng-controller="count" ng-init="getall()">
-                <h1 style="margin-left:45%;padding-top:1em;">Counts</h1>
-                <div style="width:50%;" class="login-page">
-                  <div style="width:50%;" class="form">
-                    <h4 >No of Mentors</h4>{{mcount}}
-                  </div>
-                </div>
                 <div style="width:50%;" class="login-page">
                   <div style="width:50%;" class="form">
                     <h4 >No of Students</h4>{{scount}}
-                  </div>
-                </div>
-                <div style="width:50%;" class="login-page">
-                  <div style="width:50%;" class="form">
+                    <h4 >No of Mentors</h4>{{mcount}}
                     <h4>No of University</h4>{{ucount}}
-                  </div>
-                </div>
-                <div style="width:50%;" class="login-page">
-                  <div style="width:50%;" class="form">
                     <h4 >No of ForexCompanies</h4>{{fcount}}
-                  </div>
-                </div>
-                <div style="width:50%;" class="login-page">
-                  <div style="width:50%;" class="form">
                     <h4 >No of LoanCompanies</h4>{{lcount}}
-                  </div>
-                </div>
-                <div style="width:50%;" class="login-page">
-                  <div style="width:50%;" class="form">
                     <h4 >No of AirTravelCompanies</h4>{{atcount}}
-                  </div>
-                </div>
-                <div style="width:50%;" class="login-page">
-                  <div style="width:50%;" class="form">
+                    <h4>No of BookedmockvisaCompanies</h4>{{mvcount}}
+                    <h4>No of Events</h4>{{ecount}}
                     <h4 >No of Queries</h4>{{qcount}}
                   </div>
-                </div>
-
-
+               </div>
                </div>
              </div>
              <div id='event'>

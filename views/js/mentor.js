@@ -12,6 +12,7 @@ app.controller('count',function($scope,$http){
   $scope.lcount;
   $scope.mvcount;
   $scope.qcount;
+  $scope.ecount;
   $scope.getall=function(){
 
     $http({
@@ -49,6 +50,15 @@ app.controller('count',function($scope,$http){
         console.log("my data is"+res.data.length)
       $scope.data=res.data;
       $scope.ucount=$scope.data.length;
+      console.log($scope.ucount);
+    })
+    $http({
+      method:"GET",
+      url:"https://arcane-ocean-14843.herokuapp.com/api/events"})
+      .then(function(res){
+        console.log("my data is"+res.data.length)
+      $scope.data=res.data;
+      $scope.ecount=$scope.data.length;
       console.log($scope.ucount);
     })
     $http({
@@ -256,12 +266,12 @@ app.controller('student_document',function($scope,$http){
   $scope.originaldata={};
   $scope.Search=function(){
     console.log("yes")
-    if($scope.Name===undefined||$scope.Name===""){
+    if($scope.name===undefined||$scope.name===""){
        $scope.data=$scope.originaldata;
     }
      else{
        $scope.data=$scope.originaldata.filter(user=>{
-         if(user.Name.toLowerCase()===$scope.Name.toLowerCase())
+         if(user.Name.toLowerCase()===$scope.name.toLowerCase())
            return user;
        })
      }
@@ -275,13 +285,11 @@ app.controller('student_document',function($scope,$http){
            var length=res.data.length;
            for(var i=0;i<length-1;i++){
              for(var j=i+1;j<length;j++){
-               if(res.data[i].Name && res.data[j].Name){
-               if(res.data[i].Name.localeCompare(res.data[j]) === 1){
+               if(res.data[i].Name.localeCompare(res.data[j].Name) === 1){
                  var swap=res.data[i];
                  res.data[i]=res.data[j];
                  res.data[j]=swap;
                }
-             }
            }
            }
            console.log(res.data);
