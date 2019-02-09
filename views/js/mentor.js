@@ -17,7 +17,7 @@ app.controller('count',function($scope,$http){
 
     $http({
       method:"GET",
-      url:"https://arcane-ocean-14843.herokuapp.com/api/students"})
+      url:"https://arcane-ocean-14843.herokuapp.com/api/UserSignUps"})
       .then(function(res){
         console.log("my data is"+res.data.length)
       $scope.data=res.data;
@@ -27,7 +27,7 @@ app.controller('count',function($scope,$http){
 
     $http({
       method:"GET",
-      url:"https://arcane-ocean-14843.herokuapp.com/api/mentors"})
+      url:"https://arcane-ocean-14843.herokuapp.com/api/MentorSignUps"})
       .then(function(res){
         console.log("my data is"+res.data.length)
       $scope.data=res.data;
