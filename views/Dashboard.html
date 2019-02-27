@@ -103,6 +103,10 @@
                           <a href="">
                               <i class="fas fa-file"></i>University Form</a>
                       </li>
+                      <li onclick='getval("blog")'>
+                          <a href="">
+                              <i class="fas fa-file"></i>Blog Form</a>
+                      </li>
                       <li onclick='getval("event")'>
                           <a href="">
                               <i class="fas fa-file"></i>Event</a>
@@ -920,6 +924,20 @@
                  </div>
                </div>
               </div>
+              <div id='blog'>
+                 <h1 id="form_header" style="text-align:center;padding-top:1em;text-align:center;">Event Form</h1>
+                <div class="login-page">
+                  <div class="form">
+                    <form class="login-form" action="https://arcane-ocean-14843.herokuapp.com/api/events" method="POST">
+                      <input type="text" placeholder="Title" required name="title"/>
+                      <input type="text" placeholder="ImageLink" required name="imageUrl"/><br>
+                     <p onclick="goto('https://floating-gorge-25007.herokuapp.com/')">Click to upload Files</p><br><br>
+                       <textarea type="text" placeholder="Description" required name="Desc"></textarea>
+                      <button type="submit">Submit</button>
+                    </form>
+                  </div>
+                </div>
+               </div>
               <div id='mockvisa'>
                  <h1 id="form_header" style="text-align:center;padding-top:1em;text-align:center;">MockVisa Form</h1>
                 <div class="login-page">
@@ -1078,6 +1096,7 @@
     var accomadationview=document.getElementById("accomodationview");
     var student_documents=document.getElementById("student_documents");
     var TOEFL=document.getElementById('TOEFL');
+    var blog=document.getElementById('blog')
 
     var bookedmockvisaview=document.getElementById("bookedmockvisaview");
     var bookedairtravelview=document.getElementById("bookedairtravelview");
@@ -1087,6 +1106,7 @@
 
 
     bookedmockvisaview.style.display="none";
+    blog.style.display="none";
     bookedairtravelview.style.display="none";
     bookedforexview.style.display="none";
     bookedloanview.style.display="none";
@@ -1138,6 +1158,7 @@
     var accomodation=document.getElementById("accomodation");
     var accomadationview=document.getElementById("accomodationview");
     var student_documents=document.getElementById("student_documents");
+    var blog=document.getElementById('blog');
 
     function show(e){
       TOEFL.style.display=e;
@@ -1210,6 +1231,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==='loan'){
           bookedmockvisaview.style.display="none";
@@ -1235,6 +1257,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==='airtravel'){
           bookedmockvisaview.style.display="none";
@@ -1260,6 +1283,8 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
+
         }
         else if(url==='student'){
           bookedmockvisaview.style.display="none";
@@ -1285,6 +1310,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==='mentor'){
           bookedmockvisaview.style.display="none";
@@ -1310,6 +1336,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==='forexview'){
           bookedmockvisaview.style.display="none";
@@ -1335,6 +1362,7 @@
           forexview.style.display='block';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==='airtravelview'){
           bookedmockvisaview.style.display="none";
@@ -1360,6 +1388,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="block";
+          blog.style.display="none";
         }
         else if(url==='loanview'){
           bookedmockvisaview.style.display="none";
@@ -1385,6 +1414,7 @@
           forexview.style.display='none';
           loanview.style.display='block';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="mockvisa"){
           bookedmockvisaview.style.display="none";
@@ -1410,6 +1440,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="count"){
           bookedmockvisaview.style.display="none";
@@ -1435,6 +1466,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="university"){
           bookedmockvisaview.style.display="none";
@@ -1460,6 +1492,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="mockvisaview"){
           bookedmockvisaview.style.display="none";
@@ -1485,6 +1518,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="contactview"){
           bookedmockvisaview.style.display="none";
@@ -1510,6 +1544,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="event"){
           bookedmockvisaview.style.display="none";
@@ -1535,6 +1570,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="eventview"){
           bookedmockvisaview.style.display="none";
@@ -1560,6 +1596,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="accomodation"){
           bookedmockvisaview.style.display="none";
@@ -1585,6 +1622,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="accomodationview"){
           bookedmockvisaview.style.display="none";
@@ -1610,6 +1648,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="student_documents"){
           bookedmockvisaview.style.display="none";
@@ -1635,6 +1674,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="bookedmockvisaview"){
           bookedmockvisaview.style.display="block";
@@ -1660,6 +1700,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="bookedairtravelview"){
           bookedmockvisaview.style.display="none";
@@ -1685,6 +1726,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="bookedforexview"){
           bookedmockvisaview.style.display="none";
@@ -1710,6 +1752,7 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
         }
         else if(url==="bookedloanview"){
           bookedmockvisaview.style.display="none";
@@ -1735,6 +1778,8 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
+
         }
         else if(url==="bookedaccomodationview"){
           bookedmockvisaview.style.display="none";
@@ -1760,6 +1805,33 @@
           forexview.style.display='none';
           loanview.style.display='none';
           airtravelview.style.display="none";
+          blog.style.display="none";
+        }
+        else if(url==="blog"){
+          bookedmockvisaview.style.display="none";
+          bookedairtravelview.style.display="none";
+          bookedforexview.style.display="none";
+          bookedloanview.style.display="none";
+          bookedaccomodationview.style.display="none";
+          student_documents.style.display="none";
+          accomodationview.style.display="none";
+          accomodation.style.display="none";
+          eventview.style.display="none";
+          event.style.display="none";
+          contactview.style.display="none";
+          mockvisaview.style.display="none";
+          count.style.display="none";
+          university.style.display="none";
+          mockvisa.style.display="none";
+          loan.style.display="none";
+          forex.style.display="none";
+          mentor.style.display='none';
+          airtravel.style.display='none';
+          student.style.display='none';
+          forexview.style.display='none';
+          loanview.style.display='none';
+          airtravelview.style.display="none";
+          blog.style.display="block";
         }
       }
     </script>
